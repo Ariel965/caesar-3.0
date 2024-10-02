@@ -2,9 +2,10 @@ import random
 import string
 
 secret_message = "Somewhere over the rainbow 123"
-number = 5
+number = 3
 
 def random_char():
+   
     choice = random.choice(['lower', 'upper', 'digit'])
     if choice == 'lower':
         return random.choice(string.ascii_lowercase)
@@ -29,6 +30,7 @@ def caesar_cipher(text: str, shift: int) -> str:
         else:
             result.append((char, char))  # Non-alphanumeric characters remain unchanged
 
+
     encrypted_message = ''.join([rand for _, rand in result])
     return encrypted_message, result
 
@@ -41,6 +43,7 @@ def caesar_decipher(encrypted_message: str, original_data: list, shift: int) -> 
             result.append(original_char)
         else:
             result.append(char)
+
 
     final_decrypted_message = []
     for char in result:
